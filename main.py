@@ -5,11 +5,12 @@ import matplotlib.pyplot as plt
 
 
 def main(n_samples, sigma):
-    signal = np.random.normal(scale=sigma, size=n_samples)
-    fig, ax = plt.subplots(figsize=(20, 10))
+    for rep in range(5):
+        signal = np.random.normal(scale=sigma, size=n_samples)
+        fig, ax = plt.subplots(figsize=(20, 10))
 
-    ax.plot(signal)
-    fig.savefig("signal.png")
+        ax.plot(signal)
+        fig.savefig("signal_{}.png".format(rep))
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Display random signal')
